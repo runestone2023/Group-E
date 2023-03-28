@@ -38,3 +38,5 @@ For communication we are using Discord and Zoom. We have scheduled standups at t
 - Runestone 2023 Trello Link: https://trello.com/w/runestone2023
 
 - Development Tools Workshop Lecture: https://uppsala.instructure.com/courses/66448/files/4861733/download
+
+- Team Contract: https://docs.google.com/document/d/15_FFz9jD9s6f4SDYJ8P5a1TKAuOmk1R_ZFpwPkwgIbI/edit#
