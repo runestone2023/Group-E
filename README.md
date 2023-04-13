@@ -41,4 +41,3 @@ For communication we are using Discord and Zoom. We have scheduled standups at t
 
 - Team Contract: https://docs.google.com/document/d/15_FFz9jD9s6f4SDYJ8P5a1TKAuOmk1R_ZFpwPkwgIbI/edit#
 
-Webhook test
