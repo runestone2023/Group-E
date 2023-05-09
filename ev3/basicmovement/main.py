@@ -1,40 +1,55 @@
 #!/usr/bin/env pybricks-micropython
 
-"""
-Example LEGO® MINDSTORMS® EV3 Robot Educator Driving Base Program
------------------------------------------------------------------
-
-This program requires LEGO® EV3 MicroPython v2.0.
-Download: https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3
-
-Building instructions can be found at:
-https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#robot
-"""
-
 from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, UltrasonicSensor
 from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
 # from server import app
 import time
+import asyncio
+from pydantic import BaseModel
+from websockets.sync.client import connect
+import websockets
+
+message = ""
+async def handler(websocket):
+    while True:
+        try:
+            message = await websocket.recv()
+        except websockets.ConnectionClosedOK:
+            break
+
+async def main():
+    async with websockets.serve(handler,"",8001):
+        await asyncio.Future()
+    # Initialize the EV3 Brick.
+    ev3 = EV3Brick()
+
+    glassbilen = ["G/8","C/8","E/8","C/8","G/8", "G/8", "C/8", "E/8","C/8","G/8","F/8","F/8","D/8","D/8","C/8"]
+
+    #Initialize the distance sensor
+    sensor1 = UltrasonicSensor(Port.S1)
+    #Connect to the server and return the id of the device
+    id = ev3.info()["id"]
+    message = ""
+    body = {"username" : "Douglas" , "password" : "1234", "device_id" : {id}}
+    
+    user_id = r.content()["id"]
 
 
-# Initialize the EV3 Brick.
-ev3 = EV3Brick()
-#Initialize the distance sensor
+    connected = { "$set": { "current_status": "connected" , "device_id": {id} }}
+    await websockets.send(connected)
+    r = requests.post(f'http://localhost:8000/connect/?id={user_id}/{connected}')
+    r = requests.get(f'http://localhost:8000/beep/?id={user_id}')
+    # Initialize the motors.
+    left_motor = Motor(Port.B)
+    right_motor = Motor(Port.C)
+    spinning_motor = Motor(Port.D)
 
-sensor1 = UltrasonicSensor(Port.S1)
-
-# Initialize the motors.
-left_motor = Motor(Port.B)
-right_motor = Motor(Port.C)
-spinning_motor = Motor(Port.D)
-
-# Initialize the drive base.
-robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
-drive = True
-speed = -100
-glassbilen = ["G/8","C/8","E/8","C/8","G/8", "G/8", "C/8", "E/8","C/8","G/8","F/8","F/8","D/8","D/8","C/8"]
+    # Initialize the drive base.
+    robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
+    drive = True
+    speed = -100
 
 while drive:
     # Play low putched tone to indicate no object is detected
@@ -76,4 +91,6 @@ while drive:
         continue
     else:
          continue
-
+    
+if __name__ == "__main__":
+    asyncio.run(main())
