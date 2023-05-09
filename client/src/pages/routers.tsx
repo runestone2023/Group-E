@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import ROUTER from "../config/router";
 import AppLayout from "../layouts/AppLayout";
+import { ConnectionProvider } from "../contexts/ConnectionContext";
 // import AuthRoute from "./AuthRoute";
 
 const Login = React.lazy(() => import("./Login"));
@@ -28,7 +29,14 @@ const AppRoutes: React.FC = () => {
           // </AuthRoute>
         }
       >
-        <Route path={ROUTER.HOME.INDEX} element={<Home />} />
+        <Route
+          path={ROUTER.HOME.INDEX}
+          element={
+            <ConnectionProvider>
+              <Home />
+            </ConnectionProvider>
+          }
+        />
         <Route path="*" element={<_404NotFound />} />
       </Route>
     </Routes>
