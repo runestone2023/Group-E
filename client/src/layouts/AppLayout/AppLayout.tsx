@@ -1,14 +1,16 @@
-import { Anchor, AppShell, Button, Group, Header, Image, LoadingOverlay, Menu, Navbar, Text } from "@mantine/core";
-import { Suspense, useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import ROUTER from "../../config/router";
+import { Anchor, AppShell, Button, Group, Header, Image, LoadingOverlay, Navbar, Text } from "@mantine/core";
 import { IconLogout } from "@tabler/icons-react";
+import { Suspense, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { Outlet } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
+import ROUTER from "../../config/router";
 import MainLinks from "./MainLinks";
 import User from "./User";
+import LanguagePicker from "@/components/common/LanguagePicker";
 
 export default function AppLayout() {
-  const [opened, setOpened] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {}, []);
 
@@ -23,9 +25,12 @@ export default function AppLayout() {
         navbarOffsetBreakpoint="sm"
         asideOffsetBreakpoint="sm"
         navbar={
-          <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 280 }}>
+          <Navbar p="md" hiddenBreakpoint="sm" hidden={true} width={{ sm: 200, lg: 280 }}>
             <Navbar.Section grow mt="0">
               <MainLinks />
+            </Navbar.Section>
+            <Navbar.Section>
+              <LanguagePicker sx={{ paddingBottom: 12 }} />
             </Navbar.Section>
             <Navbar.Section>
               <User />
@@ -40,12 +45,12 @@ export default function AppLayout() {
                   <Image radius={4} src={logo} height={32} width={32} />
                 </Anchor>
                 <Text fw={600} fz="lg">
-                  Mobility Mate - Group E
+                  Mobility Mate - {`${t("group")}`} E
                 </Text>
               </Group>
               <Group>
                 <Button variant="subtle" color="red" leftIcon={<IconLogout size={20} />}>
-                  Log Out
+                  {t("auth.logout")}
                 </Button>
               </Group>
             </Group>

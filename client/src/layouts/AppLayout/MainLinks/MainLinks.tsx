@@ -1,17 +1,23 @@
+import ROUTER from "@/config/router";
 import { Group, Text, ThemeIcon, UnstyledButton } from "@mantine/core";
-import { IconBroadcast, IconBroadcastOff, IconPlayerPause, IconPlayerPlay, IconPlayerStop } from "@tabler/icons-react";
+import { IconScan, IconWifi } from "@tabler/icons-react";
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 interface MainLinkProps {
   icon: React.ReactNode;
   color: string;
   label: string;
+  to: string;
 }
 
-const MainLink = ({ icon, color, label }: MainLinkProps) => {
+const MainLink = ({ icon, color, label, to }: MainLinkProps) => {
+  const navigate = useNavigate();
+
   return (
     <UnstyledButton
-      onClick={() => console.log(label)}
+      onClick={() => navigate(to, { replace: true })}
       sx={(theme) => ({
         display: "block",
         width: "100%",
@@ -37,36 +43,26 @@ const MainLink = ({ icon, color, label }: MainLinkProps) => {
   );
 };
 
-const data = [
-  {
-    icon: <IconBroadcast size="1rem" />,
-    color: "blue",
-    label: "CONNECT",
-  },
-  {
-    icon: <IconBroadcastOff size="1rem" />,
-    color: "red.9",
-    label: "DISCONNECT",
-  },
-  {
-    icon: <IconPlayerPlay size="1rem" />,
-    color: "green",
-    label: "START THE ROBOT",
-  },
-  {
-    icon: <IconPlayerPause size="1rem" />,
-    color: "yellow",
-    label: "PAUSE ACTIONS",
-  },
-  {
-    icon: <IconPlayerStop size="1rem" />,
-    color: "red.5",
-    label: "STOP THE ROBOT",
-  },
-];
-
 const MainLinks = () => {
+  const { t } = useTranslation();
+
+  const data = [
+    {
+      icon: <IconWifi size="1rem" />,
+      color: "red",
+      label: t("nav.connect"),
+      to: ROUTER.NAV.CONNECT,
+    },
+    {
+      icon: <IconScan size="1rem" />,
+      color: "teal",
+      label: t("nav.scan"),
+      to: ROUTER.NAV.SCAN,
+    },
+  ];
+
   const links = data.map((link) => <MainLink {...link} key={link.label} />);
+
   return <div>{links}</div>;
 };
 

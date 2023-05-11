@@ -3,11 +3,12 @@ import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import ROUTER from "../config/router";
 import AppLayout from "../layouts/AppLayout";
-// import AuthRoute from "./AuthRoute";
 
 const Login = React.lazy(() => import("./Login"));
 const _404NotFound = React.lazy(() => import("../components/common/_404NotFound"));
 const Home = React.lazy(() => import("../components/Home"));
+const Connect = React.lazy(() => import("../components/Connect"));
+const Scan = React.lazy(() => import("../components/Scan"));
 
 const AppRoutes: React.FC = () => {
   return (
@@ -20,15 +21,10 @@ const AppRoutes: React.FC = () => {
           </Suspense>
         }
       />
-      <Route
-        path={ROUTER.HOME.INDEX}
-        element={
-          // <AuthRoute>
-          <AppLayout />
-          // </AuthRoute>
-        }
-      >
+      <Route path={ROUTER.HOME.INDEX} element={<AppLayout />}>
         <Route path={ROUTER.HOME.INDEX} element={<Home />} />
+        <Route path={ROUTER.NAV.CONNECT} element={<Connect />} />
+        <Route path={ROUTER.NAV.SCAN} element={<Scan />} />
         <Route path="*" element={<_404NotFound />} />
       </Route>
     </Routes>

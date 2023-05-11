@@ -1,0 +1,38 @@
+{
+  "lang": {
+    "en": "English",
+    "vi": "Vietnamese",
+    "se": "Swedish",
+    "choose": "Language"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Log Out",
+    "welcomeText": "Welcome back. Please log in to continue.",
+    "username": "Username",
+    "password": "Password",
+    "enterUsername": "Enter your username",
+    "enterPassword": "Enter your password"
+  },
+  "group": "Group",
+  "team": {
+    "pm": "Project Manager",
+    "des": "UI/UX Designer",
+    "fe": "Front End Developer",
+    "be": "Back End Developer"
+  },
+  "nav": {
+    "connect": "Connect",
+    "scan": "Scan"
+  },
+  "404": {
+    "title": "Page not found",
+    "desc": "sorry the page you were looking for does not exist",
+    "return": "Return to",
+    "home": "Dashboard"
+  },
+  "connect": {
+    "connected": "Connected",
+    "disconnected": "Disconnected"
+  }
+}

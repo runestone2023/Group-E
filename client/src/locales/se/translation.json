@@ -1,0 +1,38 @@
+{
+  "lang": {
+    "en": "Engelska",
+    "vi": "Vietnamesiska",
+    "se": "Svenska",
+    "choose": "Språk"
+  },
+  "auth": {
+    "login": "Logga in",
+    "logout": "Logga ut",
+    "welcomeText": "Välkommen tillbaka. Logga in för att fortsätta.",
+    "username": "Användarnamn",
+    "password": "Lösenord",
+    "enterUsername": "Ange användarnamn",
+    "enterPassword": "Ange lösenord"
+  },
+  "group": "Grupp",
+  "team": {
+    "pm": "Projektledare",
+    "des": "UI/UX-designer",
+    "fe": "Frontend-utvecklare",
+    "be": "Backend-utvecklare"
+  },
+  "nav": {
+    "connect": "Anslut",
+    "scan": "Skanna"
+  },
+  "404": {
+    "title": "Sida ej funnen",
+    "desc": "Tyvärr finns inte sidan du söker efter",
+    "return": "Gå tillbaka till",
+    "home": "Dashboard"
+  },
+  "connect": {
+    "connected": "Ansluten",
+    "disconnected": "Frånkopplad"
+  }
+}

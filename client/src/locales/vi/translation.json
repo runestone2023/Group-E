@@ -1,0 +1,38 @@
+{
+  "lang": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt",
+    "se": "Tiếng Thuỵ Điển",
+    "choose": "Ngôn ngữ"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng Xuất",
+    "welcomeText": "Chào mừng quay trở lại. Đăng nhập để tiếp tục.",
+    "username": "Tên tài khoản",
+    "password": "Mật khẩu",
+    "enterUsername": "Nhập tên tài khoản",
+    "enterPassword": "Nhập mật khẩu"
+  },
+  "group": "Nhóm",
+  "team": {
+    "pm": "Project Manager",
+    "des": "Thiết Kế UI/UX",
+    "fe": "Lập Trình Frontend",
+    "be": "Lập Trình Backend"
+  },
+  "nav": {
+    "connect": "Kết nối",
+    "scan": "Tìm kiếm"
+  },
+  "404": {
+    "title": "Không tìm thấy trang",
+    "desc": "Trang đã bị xoá hoặc địa chỉ URL không đúng",
+    "return": "Trở về",
+    "home": "Trang Chủ"
+  },
+  "connect": {
+    "connected": "Kết nối",
+    "disconnected": "Ngắt kết nối"
+  }
+}
