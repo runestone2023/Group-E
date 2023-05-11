@@ -34,5 +34,9 @@
   "connect": {
     "connected": "Ansluten",
     "disconnected": "Frånkopplad"
+  },
+  "location": {
+    "uppsala": "Uppsala",
+    "hanoi": "Hanoi"
   }
 }

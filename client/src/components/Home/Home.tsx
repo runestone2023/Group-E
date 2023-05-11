@@ -130,7 +130,9 @@ const Home = () => {
 
   return (
     <Carousel
+      withIndicators
       slideSize="30%"
+      mt="xl"
       breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: rem(2) }]}
       slideGap="xl"
       align="start"
