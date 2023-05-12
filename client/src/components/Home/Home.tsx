@@ -1,9 +1,11 @@
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
-import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem, Image } from "@mantine/core";
+import { createStyles, Paper, Text, Title, Button, useMantineTheme, rem, Image, Stack, Center } from "@mantine/core";
 import seFlag from "../../assets/img/flags/se.png";
 import vnFlag from "../../assets/img/flags/vn.png";
 import { useTranslation } from "react-i18next";
+import Supervisor from "./Supervisor";
+import supervisorImg from "../../assets/img/supervisor.jpg";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -74,7 +76,7 @@ const Home = () => {
     {
       image:
         "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-      name: "Tran Tan Dung",
+      name: "Trần Tấn Dũng",
       category: t(`team.fe`),
       flag: vnFlag,
     },
@@ -88,7 +90,7 @@ const Home = () => {
     {
       image:
         "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-      name: "Tran Duc Huy",
+      name: "Trần Đức Huy",
       category: t(`team.fe`),
       flag: vnFlag,
     },
@@ -109,7 +111,7 @@ const Home = () => {
     {
       image:
         "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-      name: "Tran Phuc Thanh (James)",
+      name: "Trần Phúc Thành (James)",
       category: t(`team.fe`),
       flag: vnFlag,
     },
@@ -129,17 +131,25 @@ const Home = () => {
   ));
 
   return (
-    <Carousel
-      withIndicators
-      slideSize="30%"
-      mt="xl"
-      breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: rem(2) }]}
-      slideGap="xl"
-      align="start"
-      slidesToScroll={mobile ? 1 : 2}
-    >
-      {slides}
-    </Carousel>
+    <Stack>
+      <Supervisor
+        title={t("team.supervisor")}
+        name="Phạm Ngọc Hưng"
+        avatar={supervisorImg}
+        email="hungpn@soict.hust.edu.vn"
+        phone="users.soict.hust.edu.vn/hungpn"
+      />
+      <Carousel
+        withIndicators
+        slideSize="30%"
+        breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: rem(2) }]}
+        slideGap="xl"
+        align="start"
+        slidesToScroll={mobile ? 1 : 2}
+      >
+        {slides}
+      </Carousel>
+    </Stack>
   );
 };
 

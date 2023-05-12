@@ -1,8 +1,11 @@
 {
   "lang": {
     "en": "English",
+    "en-des": "English",
     "vi": "Vietnamese",
+    "vi-des": "Tiếng Việt",
     "se": "Swedish",
+    "se-des": "Svenska",
     "choose": "Language"
   },
   "auth": {
@@ -19,7 +22,8 @@
     "pm": "Project Manager",
     "des": "UI/UX Designer",
     "fe": "Front End Developer",
-    "be": "Back End Developer"
+    "be": "Back End Developer",
+    "supervisor": "Supervisor"
   },
   "nav": {
     "connect": "Connect",
@@ -33,10 +37,24 @@
   },
   "connect": {
     "connected": "Connected",
-    "disconnected": "Disconnected"
-  },
-  "location": {
-    "uppsala": "Uppsala",
-    "hanoi": "Hanoi"
+    "disconnected": "Disconnected",
+    "config": {
+      "title": "Configure connection",
+      "desc": "Setting up the communication link between the robot and the controller",
+      "connect": {
+        "title": "Connection status",
+        "desc": "Current status for connection, on or off",
+        "button": {
+          "on": "ON",
+          "off": "OFF"
+        }
+      },
+      "location": {
+        "uppsala": "Uppsala",
+        "hanoi": "Hanoi",
+        "location": "Location",
+        "desc": "Choose the robot from this location to control"
+      }
+    }
   }
 }

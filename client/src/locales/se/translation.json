@@ -1,8 +1,11 @@
 {
   "lang": {
     "en": "Engelska",
+    "en-des": "English",
     "vi": "Vietnamesiska",
+    "vi-des": "Tiếng Việt",
     "se": "Svenska",
+    "se-des": "Svenska",
     "choose": "Språk"
   },
   "auth": {
@@ -19,7 +22,8 @@
     "pm": "Projektledare",
     "des": "UI/UX-designer",
     "fe": "Frontend-utvecklare",
-    "be": "Backend-utvecklare"
+    "be": "Backend-utvecklare",
+    "supervisor": "Övervakare"
   },
   "nav": {
     "connect": "Anslut",
@@ -33,10 +37,24 @@
   },
   "connect": {
     "connected": "Ansluten",
-    "disconnected": "Frånkopplad"
-  },
-  "location": {
-    "uppsala": "Uppsala",
-    "hanoi": "Hanoi"
+    "disconnected": "Frånkopplad",
+    "config": {
+      "title": "Konfigurera anslutning",
+      "desc": "Ställ in kommunikationslänken mellan roboten och kontrollern",
+      "connect": {
+        "title": "Anslutningstillstånd",
+        "desc": "Den nuvarande statusen för anslutningen, om den är på eller av?",
+        "button": {
+          "on": "PÅ",
+          "off": "AV"
+        }
+      },
+      "location": {
+        "uppsala": "Uppsala",
+        "hanoi": "Hanoi",
+        "location": "Plats",
+        "desc": "Välj robot från denna plats att styra"
+      }
+    }
   }
 }

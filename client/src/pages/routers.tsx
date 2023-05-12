@@ -1,5 +1,5 @@
 import { LoadingOverlay } from "@mantine/core";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import ROUTER from "../config/router";
 import AppLayout from "../layouts/AppLayout";
@@ -12,6 +12,10 @@ const Connect = React.lazy(() => import("../components/Connect"));
 const Scan = React.lazy(() => import("../components/Scan"));
 
 const AppRoutes: React.FC = () => {
+  useEffect(() => {
+    if (!localStorage.getItem("lang")) localStorage.setItem("lang", "en");
+  }, []);
+
   return (
     <Routes>
       <Route

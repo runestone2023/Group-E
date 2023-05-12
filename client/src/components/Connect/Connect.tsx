@@ -1,75 +1,121 @@
-import {
-  AspectRatio,
-  Badge,
-  Box,
-  Center,
-  Group,
-  Image,
-  SegmentedControl,
-  Skeleton,
-  Stack,
-  Switch,
-  Text,
-  useMantineTheme,
-} from "@mantine/core";
-import { IconBroadcast, IconBroadcastOff, IconSquareLetterH, IconSquareLetterU } from "@tabler/icons-react";
+import { createStyles, Card, Group, Switch, Text, rem, Grid, SegmentedControl, Center, Box } from "@mantine/core";
+import { IconSquareLetterH, IconSquareLetterU } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
-import uu from "../../assets/img/locations/uu.jpg";
-import hust from "../../assets/img/locations/hust.png";
+
+const useStyles = createStyles((theme) => ({
+  card: {
+    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+  },
+
+  item: {
+    "& + &": {
+      paddingTop: theme.spacing.sm,
+      marginTop: theme.spacing.sm,
+      borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
+    },
+  },
+
+  switch: {
+    "& *": {
+      cursor: "pointer",
+    },
+  },
+
+  title: {
+    lineHeight: 1,
+  },
+}));
 
 const Connect = () => {
+  const { classes } = useStyles();
   const { t } = useTranslation();
-  const theme = useMantineTheme();
+
+  const data: {
+    title: string;
+    description: string;
+  }[] = [
+    {
+      description: "Connected",
+      title: "Connected state",
+    },
+    {
+      description: "Location",
+      title: "Location",
+    },
+  ];
+
+  const items = data.map((item) => (
+    <Group position="apart" className={classes.item} noWrap spacing="xl">
+      <div>
+        <Text>{item.title}</Text>
+        <Text size="xs" color="dimmed">
+          {item.description}
+        </Text>
+      </div>
+      <Switch onLabel="ON" offLabel="OFF" className={classes.switch} size="lg" />
+    </Group>
+  ));
 
   return (
-    <Group position="center" my="xl">
-      <Stack spacing="xl">
-        <Group position="apart">
-          <Switch
-            labelPosition="left"
-            onChange={(value) => console.log(value)}
-            size="lg"
-            onLabel={<IconBroadcast color={theme.white} size="1.25rem" stroke={1.5} />}
-            offLabel={<IconBroadcastOff color={theme.colors.gray[6]} size="1.25rem" stroke={1.5} />}
-          />
-          <Badge color="green" size="xl">
-            {t("connect.connected")}
-          </Badge>
-        </Group>
-        <Group>
-          <Skeleton visible={false}>
-            <Image height={600} src={uu} />
-            {/* <Image src={hust} height={600} /> */}
-          </Skeleton>
-        </Group>
-        <SegmentedControl
-          // disabled={true}
-          onChange={(value) => console.log(value)}
-          // color="red.9"
-          size="lg"
-          data={[
-            {
-              value: "uppsala",
-              label: (
-                <Center>
-                  <IconSquareLetterU size="1rem" stroke={1.5} />
-                  <Box ml={10}>{t("location.uppsala")}</Box>
-                </Center>
-              ),
-            },
-            {
-              value: "hanoi",
-              label: (
-                <Center>
-                  <IconSquareLetterH size="1rem" stroke={1.5} />
-                  <Box ml={10}>{t("location.hanoi")}</Box>
-                </Center>
-              ),
-            },
-          ]}
-        />
-      </Stack>
-    </Group>
+    <Grid>
+      <Grid.Col span={6}>
+        <Card withBorder radius="md" p="xl" className={classes.card}>
+          <Text fz="lg" className={classes.title} fw={500}>
+            {t("connect.config.title")}{" "}
+          </Text>
+          <Text fz="xs" c="dimmed" mt={3} mb="xl">
+            {t("connect.config.desc")}{" "}
+          </Text>
+          <Group position="apart" className={classes.item} noWrap spacing="xl">
+            <div>
+              <Text>{t("connect.config.connect.title")}</Text>
+              <Text size="xs" color="dimmed">
+                {t("connect.config.connect.desc")}
+              </Text>
+            </div>
+            <Switch
+              onLabel={t("connect.config.connect.button.on")}
+              offLabel={t("connect.config.connect.button.off")}
+              className={classes.switch}
+              size="lg"
+            />
+          </Group>
+          <Group position="apart" className={classes.item} noWrap spacing="xl">
+            <div>
+              <Text>{t("connect.config.location.location")}</Text>
+              <Text size="xs" color="dimmed">
+                {t("connect.config.location.desc")}
+              </Text>
+            </div>
+            <SegmentedControl
+              // disabled={true}
+              onChange={(value) => console.log(value)}
+              // color="red.9"
+              data={[
+                {
+                  value: "uppsala",
+                  label: (
+                    <Center>
+                      <IconSquareLetterU size="1rem" stroke={1.5} />
+                      <Box ml={10}>{t("connect.config.location.uppsala")}</Box>
+                    </Center>
+                  ),
+                },
+                {
+                  value: "hanoi",
+                  label: (
+                    <Center>
+                      <IconSquareLetterH size="1rem" stroke={1.5} />
+                      <Box ml={10}>{t("connect.config.location.hanoi")}</Box>
+                    </Center>
+                  ),
+                },
+              ]}
+            />
+          </Group>
+        </Card>
+      </Grid.Col>
+    </Grid>
   );
 };
 

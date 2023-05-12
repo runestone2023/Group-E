@@ -1,8 +1,11 @@
 {
   "lang": {
     "en": "Tiếng Anh",
+    "en-des": "English",
     "vi": "Tiếng Việt",
+    "vi-des": "Tiếng Việt",
     "se": "Tiếng Thuỵ Điển",
+    "se-des": "Svenska",
     "choose": "Ngôn ngữ"
   },
   "auth": {
@@ -19,7 +22,8 @@
     "pm": "Project Manager",
     "des": "Thiết Kế UI/UX",
     "fe": "Lập Trình Frontend",
-    "be": "Lập Trình Backend"
+    "be": "Lập Trình Backend",
+    "supervisor": "Giảng viên hướng dẫn"
   },
   "nav": {
     "connect": "Kết nối",
@@ -32,11 +36,25 @@
     "home": "Trang Chủ"
   },
   "connect": {
-    "connected": "Kết nối",
-    "disconnected": "Ngắt kết nối"
-  },
-  "location": {
-    "uppsala": "Uppsala",
-    "hanoi": "Hà Nội"
+    "connected": "Đã kết nối",
+    "disconnected": "Đã ngắt kết nối",
+    "config": {
+      "title": "Cài đặt kết nối",
+      "desc": "Tạo các cài đặt cho việc kết nối robot đến máy điều khiển và giao diện",
+      "connect": {
+        "title": "Trạng thái kết nối",
+        "desc": "Trạng thái kết nối hiện tại, chưa hay kết nối rồi?",
+        "button": {
+          "on": "MỞ",
+          "off": "ĐÓNG"
+        }
+      },
+      "location": {
+        "uppsala": "Uppsala",
+        "hanoi": "Hà Nội",
+        "location": "Địa điểm",
+        "desc": "Chọn robot để điều khiển"
+      }
+    }
   }
 }
