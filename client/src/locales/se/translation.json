@@ -54,7 +54,22 @@
         "hanoi": "Hanoi",
         "location": "Plats",
         "desc": "Välj robot från denna plats att styra"
+      },
+      "alert": {
+        "title": "Ljudkontroll",
+        "description": "Testa varningssystemet för att säkerställa optimal ljudkvalitet",
+        "buttonLabel": "Visa varning",
+        "modal": {
+          "title": "Varning",
+          "description": "Hinder har upptäckts, se till att allt är i ordning"
+        }
       }
+    }
+  },
+  "system": {
+    "button": {
+      "confirm": "Bekräfta",
+      "cancel": "Avbryt"
     }
   }
 }

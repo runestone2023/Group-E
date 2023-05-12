@@ -54,7 +54,22 @@
         "hanoi": "Hà Nội",
         "location": "Địa điểm",
         "desc": "Chọn robot để điều khiển"
+      },
+      "alert": {
+        "title": "Kiểm tra âm thanh",
+        "description": "Kiểm tra âm thanh cho bộ phận báo hiệu vật cản",
+        "buttonLabel": "Mở Báo Hiệu",
+        "modal": {
+          "title": "Cảnh báo",
+          "description": "Phát hiện vật cản, hãy chắc chắn rằng mọi thứ vấn ổn"
+        }
       }
+    }
+  },
+  "system": {
+    "button": {
+      "confirm": "Đồng ý",
+      "cancel": "Huỷ bỏ"
     }
   }
 }

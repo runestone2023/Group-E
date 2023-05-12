@@ -54,7 +54,22 @@
         "hanoi": "Hanoi",
         "location": "Location",
         "desc": "Choose the robot from this location to control"
+      },
+      "alert": {
+        "title": "Soundcheck",
+        "description": "Test the alert system to ensure optimal sound quality",
+        "buttonLabel": "Show Alert",
+        "modal": {
+          "title": "Warning",
+          "description": "Obstacle detected, make sure everything is okay"
+        }
       }
+    }
+  },
+  "system": {
+    "button": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
     }
   }
 }

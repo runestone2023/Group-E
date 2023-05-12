@@ -1,6 +1,6 @@
 import { MantineProvider } from "@mantine/core";
-import { ModalsProvider } from "@mantine/modals";
 import { Notifications } from "@mantine/notifications";
+import { ModalsProvider } from "@mantine/modals";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -18,15 +18,15 @@ dayjs.locale(i18next.language);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <I18nextProvider i18n={i18next}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <I18nextProvider i18n={i18next}>
         <MantineProvider theme={customTheme}>
           <ModalsProvider>
             <Notifications position="top-right" />
             <AppRoutes />
           </ModalsProvider>
         </MantineProvider>
-      </BrowserRouter>
-    </I18nextProvider>
+      </I18nextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
