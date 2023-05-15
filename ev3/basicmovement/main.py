@@ -15,15 +15,21 @@ from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import Motor, UltrasonicSensor
 from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
-from server import app
-
+#import pycurl
+import requests
+from pydantic import BaseModel
 
 # Initialize the EV3 Brick.
 ev3 = EV3Brick()
 #Initialize the distance sensor
-
 sensor1 = UltrasonicSensor(Port.S1)
-
+#Connect to the server and return the id of the device
+id = ev3.info()["id"]
+body = {"username" : "Douglas" , "password" : "1234"}
+r = requests.post(f'http://localhost:8000/{body}')
+user_id = r.content()["id"]
+connected = { "$set": { "current_status": "connected" , "device_id": {id} }}
+r = requests.post(f'http://localhost:8000/connect/?id={user_id}/{connected}')
 # Initialize the motors.
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.C)
