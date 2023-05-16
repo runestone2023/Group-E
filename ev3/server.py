@@ -36,7 +36,9 @@ class UserModel(BaseModel):
     username: str = Field()
     password: str = Field()
     device_id: int | None = Field()
-    current_status: str | None = Field
+    current_status: str | None = Field()
+    language: str = Field()
+    location: str = Field()
 
     class Config:
         allow_population_by_field_name: True
@@ -53,6 +55,7 @@ class UserModel(BaseModel):
 class UpdateUserModel(BaseModel):
     device_id: Optional[int]
     current_status: Optional[str]
+    location: Optional[str]
 
     class Config:
         allow_population_by_field_name: True
@@ -66,15 +69,24 @@ class UpdateUserModel(BaseModel):
             }
         }
 
+
+@app.websocket('/ws')
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    while True:
+        data = await websocket.receive_text()
+        await websocket.send_text(f"Recieved message with the context: {data}")
+
+
+
 @app.post("/", response_description="Added a new device", response_model=UserModel)
-async def create_user(user: UserModel = Body(...)):
+async def create_user(user: UserModel = Body()):
     user = jsonable_encoder(user)
     new_user = await db["devices"].insert_one(user)
     created_user = await db["devices"].find_one({"_id": new_user.inserted_id})
     return JSONResponse(status_code=status.HTTP_201_CREATED, content=created_user)
 
-@app.get(
-    "/", response_description="List all users", response_model=List[UserModel]
+@app.get("/", response_description="List all users", response_model=List[UserModel]
 )
 async def list_users():
     students = await db["students"].find().to_list(1000)
@@ -89,13 +101,12 @@ async def show_user(id: str):
 
     raise HTTPException(status_code=404, detail=f"User {id} not found")
 
-@app.post("/{id}", response_description="Updates the device id or the current status", response_model= UpdateUserModel)
+@app.post("/{id}", response_description="Updates the device id, the current status or the robot location", response_model= UpdateUserModel)
 async def update_user(id: str, user: UpdateUserModel = Body()):
     user = {k: v for k, v in user.dict().items() if v is not None}
 
     if len(user) >=1:
-        update_result = await db["devices"].update_one({"_id"}: id, {"$set" : user})
-
+        update_result = await db["devices"].update_one({"_id": id}, {"$set" : user})
         if update_result.modified_count == 1:
             if (
                 updated_user := await db["devices"].find_one({"_id": id})
@@ -107,6 +118,10 @@ async def update_user(id: str, user: UpdateUserModel = Body()):
         return existing_user
     
     raise HTTPException(status_code=404, detail=f"User with {id} not found")
+
+@app.post("/beep/{id}", response_description="Beeps the robot to test the sound", response_model=UserModel)
+async def beep(id: str, user : UpdateUserModel = Body()):
+    return JSONResponse(status_code=status.HTTP_200_OK, content= {'Beep'})
 
 
 # @app.get("/")
