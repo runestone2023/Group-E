@@ -35,6 +35,10 @@
     "return": "Return to",
     "home": "Dashboard"
   },
+  "scan": {
+    "scan": "Scan",
+    "start": "Start scanning"
+  },
   "connect": {
     "connected": "Connected",
     "disconnected": "Disconnected",
@@ -64,6 +68,14 @@
           "description": "Obstacle detected, make sure everything is okay"
         }
       }
+    }
+  },
+  "control": {
+    "button": {
+      "scan": "Scan",
+      "stop": "Stop",
+      "pause": "Pause",
+      "resume": "Resume"
     }
   },
   "system": {

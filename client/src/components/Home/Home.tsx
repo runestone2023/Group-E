@@ -110,14 +110,14 @@ const Home = () => {
     },
     {
       image:
-        "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1682091036572-b90b02dd347e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80",
       name: "Trần Phúc Thành (James)",
       category: t(`team.fe`),
       flag: vnFlag,
     },
     {
       image:
-        "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+        "https://images.unsplash.com/photo-1684072108336-40bb8228888e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
       name: "Johan Winman",
       category: t(`team.be`),
       flag: seFlag,

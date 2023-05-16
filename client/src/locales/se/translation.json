@@ -35,6 +35,10 @@
     "return": "Gå tillbaka till",
     "home": "Dashboard"
   },
+  "scan": {
+    "scan": "Skanna",
+    "start": "Börja skanna"
+  },
   "connect": {
     "connected": "Ansluten",
     "disconnected": "Frånkopplad",
@@ -64,6 +68,13 @@
           "description": "Hinder har upptäckts, se till att allt är i ordning"
         }
       }
+    }
+  },
+  "control": {
+    "button": {
+      "stop": "Stoppa",
+      "pause": "Pausa",
+      "resume": "Återuppta"
     }
   },
   "system": {

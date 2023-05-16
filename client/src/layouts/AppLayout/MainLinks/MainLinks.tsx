@@ -53,12 +53,12 @@ const MainLinks = () => {
       label: t("nav.connect"),
       to: ROUTER.NAV.CONNECT,
     },
-    {
-      icon: <IconScan size="1rem" />,
-      color: "teal",
-      label: t("nav.scan"),
-      to: ROUTER.NAV.SCAN,
-    },
+    // {
+    //   icon: <IconScan size="1rem" />,
+    //   color: "teal",
+    //   label: t("nav.scan"),
+    //   to: ROUTER.NAV.SCAN,
+    // },
   ];
 
   const links = data.map((link) => <MainLink {...link} key={link.label} />);

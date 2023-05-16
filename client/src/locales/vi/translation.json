@@ -35,6 +35,10 @@
     "return": "Trở về",
     "home": "Trang Chủ"
   },
+  "scan": {
+    "scan": "Quét",
+    "start": "Bắt đầu quét"
+  },
   "connect": {
     "connected": "Đã kết nối",
     "disconnected": "Đã ngắt kết nối",
@@ -64,6 +68,13 @@
           "description": "Phát hiện vật cản, hãy chắc chắn rằng mọi thứ vấn ổn"
         }
       }
+    }
+  },
+  "control": {
+    "button": {
+      "stop": "Dừng",
+      "pause": "Tạm dừng",
+      "resume": "Tiếp tục"
     }
   },
   "system": {

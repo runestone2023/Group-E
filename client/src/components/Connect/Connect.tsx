@@ -16,8 +16,17 @@ import {
   rem,
 } from "@mantine/core";
 import { openConfirmModal } from "@mantine/modals";
-import { IconAlertCircle, IconSquareLetterH, IconSquareLetterU } from "@tabler/icons-react";
+import {
+  IconAlertCircle,
+  IconPlayerPause,
+  IconPlayerPlay,
+  IconPlayerStop,
+  IconScan,
+  IconSquareLetterH,
+  IconSquareLetterU,
+} from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -71,7 +80,7 @@ const Connect = () => {
   return (
     <>
       <Grid>
-        <Grid.Col span={6}>
+        <Grid.Col span={7}>
           <Card withBorder radius="md" p="xl" className={classes.card}>
             <Text fz="lg" className={classes.title} fw={500}>
               {t("connect.config.title")}
@@ -136,6 +145,41 @@ const Connect = () => {
               </Button>
             </Group>
           </Card>
+          <Card mt="md" withBorder radius="md" p="xl" className={classes.card}>
+            <Group className={classes.item} noWrap spacing="xl" position="center">
+              <Button color="teal" leftIcon={<IconScan size={"1rem"} />}>
+                {t("control.button.scan")}
+              </Button>
+              <Button color="yellow" leftIcon={<IconPlayerPause size={"1rem"} />}>
+                {t("control.button.pause")}
+              </Button>
+              <Button disabled leftIcon={<IconPlayerPlay size={"1rem"} />}>
+                {t("control.button.resume")}
+              </Button>
+              <Button disabled color="red.7" leftIcon={<IconPlayerStop size={"1rem"} />}>
+                {t("control.button.stop")}
+              </Button>
+            </Group>
+          </Card>
+        </Grid.Col>
+        <Grid.Col span={5}>
+          <Stack align="center" justify="center" h="100%">
+            <PacmanLoader
+              color="#1864AB"
+              loading={true}
+              cssOverride={{
+                display: "block",
+                margin: "0 auto",
+                borderColor: "red",
+              }}
+              size={50}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+            <Center>
+              <Text fw={600}>Scanning...</Text>
+            </Center>{" "}
+          </Stack>
         </Grid.Col>
       </Grid>
     </>
