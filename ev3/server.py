@@ -1,6 +1,6 @@
 
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from pymongo import MongoClient
 import os
 from fastapi import FastAPI, Body, HTTPException, status
@@ -12,8 +12,9 @@ from typing import Optional, List
 import motor.motor_asyncio
 
 app = FastAPI()
-client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
-db = client.devices
+db_connection = MongoClient("mongodb://localhost:27017")
+db = db_connection.devices
+collection = db["devices"]
 
 
 class PyObjectId(ObjectId):
