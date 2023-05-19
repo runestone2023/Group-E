@@ -1,9 +1,13 @@
 from flask import Flask, Response, request
 import redis
+import socket
 
 
 app = Flask(__name__)
-db = redis.Redis()
+app.config['REDIS_HOST'] = "127.0.0.1"
+app.config['REDIS_PORT'] = "5000"
+db = redis.Redis(app)
+
 
 @app.route('/')
 def index():
@@ -31,5 +35,5 @@ def get_last():
         return val
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=5000)
 
