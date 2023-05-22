@@ -31,6 +31,7 @@ def main():
     PORT = 5000  # Port to listen on (non-privileged ports are > 1023)
 
     addr = socket.getaddrinfo(HOST, PORT)[0][-1]
+    print(str(addr))
     sock = socket.socket()
     sock.connect(addr)
     #s.connect()
@@ -42,6 +43,12 @@ def main():
 
     # Initialize the drive base.
     robot = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
+    while True:
+        data = sock.recv(1024)
+        print(str(data, 'utf8)'), end='')
+        datastr = str(data, 'utf8')
+        if datastr == 'start':
+            robot.straight(50)
     drive = True
     speed = -100
 
