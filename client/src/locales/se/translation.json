@@ -1,0 +1,86 @@
+{
+  "lang": {
+    "en": "Engelska",
+    "en-des": "English",
+    "vi": "Vietnamesiska",
+    "vi-des": "Tiếng Việt",
+    "se": "Svenska",
+    "se-des": "Svenska",
+    "choose": "Språk"
+  },
+  "auth": {
+    "login": "Logga in",
+    "logout": "Logga ut",
+    "welcomeText": "Välkommen tillbaka. Logga in för att fortsätta.",
+    "username": "Användarnamn",
+    "password": "Lösenord",
+    "enterUsername": "Ange användarnamn",
+    "enterPassword": "Ange lösenord"
+  },
+  "group": "Grupp",
+  "team": {
+    "pm": "Projektledare",
+    "des": "UI/UX-designer",
+    "fe": "Frontend-utvecklare",
+    "be": "Backend-utvecklare",
+    "supervisor": "Övervakare"
+  },
+  "nav": {
+    "connect": "Anslut",
+    "scan": "Skanna"
+  },
+  "404": {
+    "title": "Sida ej funnen",
+    "desc": "Tyvärr finns inte sidan du söker efter",
+    "return": "Gå tillbaka till",
+    "home": "Dashboard"
+  },
+  "scan": {
+    "scan": "Skanna",
+    "start": "Börja skanna"
+  },
+  "connect": {
+    "connected": "Ansluten",
+    "disconnected": "Frånkopplad",
+    "config": {
+      "title": "Konfigurera anslutning",
+      "desc": "Ställ in kommunikationslänken mellan roboten och kontrollern",
+      "connect": {
+        "title": "Anslutningstillstånd",
+        "desc": "Den nuvarande statusen för anslutningen, om den är på eller av?",
+        "button": {
+          "on": "PÅ",
+          "off": "AV"
+        }
+      },
+      "location": {
+        "uppsala": "Uppsala",
+        "hanoi": "Hanoi",
+        "location": "Plats",
+        "desc": "Välj robot från denna plats att styra"
+      },
+      "alert": {
+        "title": "Ljudkontroll",
+        "description": "Testa varningssystemet för att säkerställa optimal ljudkvalitet",
+        "buttonLabel": "Visa varning",
+        "modal": {
+          "title": "Varning",
+          "description": "Hinder har upptäckts, se till att allt är i ordning"
+        }
+      }
+    }
+  },
+  "control": {
+    "button": {
+      "stop": "Stoppa",
+      "pause": "Pausa",
+      "resume": "Återuppta"
+    }
+  },
+  "system": {
+    "button": {
+      "confirm": "Bekräfta",
+      "cancel": "Avbryt"
+    }
+  }
+}

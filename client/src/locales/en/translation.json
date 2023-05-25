@@ -1,0 +1,87 @@
+{
+  "lang": {
+    "en": "English",
+    "en-des": "English",
+    "vi": "Vietnamese",
+    "vi-des": "Tiếng Việt",
+    "se": "Swedish",
+    "se-des": "Svenska",
+    "choose": "Language"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Log Out",
+    "welcomeText": "Welcome back. Please log in to continue.",
+    "username": "Username",
+    "password": "Password",
+    "enterUsername": "Enter your username",
+    "enterPassword": "Enter your password"
+  },
+  "group": "Group",
+  "team": {
+    "pm": "Project Manager",
+    "des": "UI/UX Designer",
+    "fe": "Front End Developer",
+    "be": "Back End Developer",
+    "supervisor": "Supervisor"
+  },
+  "nav": {
+    "connect": "Connect",
+    "scan": "Scan"
+  },
+  "404": {
+    "title": "Page not found",
+    "desc": "sorry the page you were looking for does not exist",
+    "return": "Return to",
+    "home": "Dashboard"
+  },
+  "scan": {
+    "scan": "Scan",
+    "start": "Start scanning"
+  },
+  "connect": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "config": {
+      "title": "Configure connection",
+      "desc": "Setting up the communication link between the robot and the controller",
+      "connect": {
+        "title": "Connection status",
+        "desc": "Current status for connection, on or off",
+        "button": {
+          "on": "ON",
+          "off": "OFF"
+        }
+      },
+      "location": {
+        "uppsala": "Uppsala",
+        "hanoi": "Hanoi",
+        "location": "Location",
+        "desc": "Choose the robot from this location to control"
+      },
+      "alert": {
+        "title": "Soundcheck",
+        "description": "Test the alert system to ensure optimal sound quality",
+        "buttonLabel": "Show Alert",
+        "modal": {
+          "title": "Warning",
+          "description": "Obstacle detected, make sure everything is okay"
+        }
+      }
+    }
+  },
+  "control": {
+    "button": {
+      "scan": "Scan",
+      "stop": "Stop",
+      "pause": "Pause",
+      "resume": "Resume"
+    }
+  },
+  "system": {
+    "button": {
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    }
+  }
+}
