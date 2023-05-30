@@ -8,6 +8,24 @@ app.config['REDIS_HOST'] = "127.0.0.1"
 app.config['REDIS_PORT'] = "5000"
 db = redis.Redis(app)
 
+HOST = "127.0.0.1"
+PORT = 5000
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.bind((HOST, PORT))
+    s.listen()
+    conn, addr = s.accept()
+    with conn:
+        print(f"Connected by {addr}")
+        msg = "Welcome to the server!"
+        msg = f"{len(msg):<{10}}"+msg
+        s.send(bytes(msg,"utf-8"))
+        while True:
+            data = conn.recv(1024)
+            if not data:
+                break
+            conn.sendall(data)
+
 
 @app.route('/')
 def index():
