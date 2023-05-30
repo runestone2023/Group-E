@@ -78,8 +78,8 @@ PORT = 1241
 # Initialize the EV3 Brick.
 ev3 = EV3Brick()
 
-keyboard = poll()
-keyboard.register(sys.stdin)
+# keyboard = poll()
+# keyboard.register(sys.stdin)
 # Write your program here.
 
 addr = socket.getaddrinfo(HOST, PORT)[0][-1]

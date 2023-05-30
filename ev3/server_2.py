@@ -15,37 +15,37 @@ print('external IP',external_ip)
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(('', 1241))#((socket.gethostname(), 1241))
+s.bind(('', 1241))
 s.listen(5)
 # now our endpoint knows about the OTHER endpoint.
 clientsocket, address = s.accept()
 print(f"Connection from {address} has been established.")
 
-while True:
-    conn, addr = s.accept()
-    print(f"Connected by {addr}")
-    break
-    command = "star"
-    clientsocket.send(bytes(command,"utf-8"))
-    # msg3 = "stopp"
-    # clientsocket.send(bytes(msg3,"utf-8"))
-    #time.sleep(30)# 
-
+# while True:
+#     conn, addr = s.accept()
+#     print(f"Connected by {addr}")
+#     break
+#     command = "star"
+#     clientsocket.send(bytes(command,"utf-8"))
+#     # msg3 = "stopp"
+#     # clientsocket.send(bytes(msg3,"utf-8"))
+#     #time.sleep(30)# 
 
 app = FastAPI()
-
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+async def root():
+    return {"message": "Hello World"}
 
 
-@app.get("/start")
+@app.post("/start")
 def start():
-    conn.sendall(b"star")
-    return
+    print("START")
+    clientsocket.sendall(b"star")
+    return {"Start": "now"}
 
-@app.get("/stop")
+@app.post("/stop")
 def stop():
-    conn.sendall(b"stop")
-    return
+    print("STOP")
+    clientsocket.sendall(b"stop")
+    return {"Stop": "now"}
 
