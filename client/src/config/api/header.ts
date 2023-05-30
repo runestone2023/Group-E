@@ -1,5 +1,6 @@
 export const HEADERS = {
   header: () => ({
-    "Content-Type": "application/x-www-form-urlencoded",
+    accept: "application/json",
+    "Content-Type": "application/json; charset=UTF-8",
   }),
 };
