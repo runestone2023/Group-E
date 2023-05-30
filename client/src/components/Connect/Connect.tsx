@@ -1,4 +1,5 @@
 import alert from "@/assets/sound/alert.mp3";
+import { useConnectionContext } from "@/hooks/context";
 import useAudio from "@/hooks/use-audio";
 import {
   Alert,
@@ -30,14 +31,19 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 
 const useStyles = createStyles((theme) => ({
   card: {
-    backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
   },
 
   item: {
     "& + &": {
       paddingTop: theme.spacing.sm,
       marginTop: theme.spacing.sm,
-      borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
+      borderTop: `${rem(1)} solid ${
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[4]
+          : theme.colors.gray[2]
+      }`,
     },
   },
 
@@ -55,7 +61,13 @@ const useStyles = createStyles((theme) => ({
 const Connect = () => {
   const { t } = useTranslation();
   const { classes } = useStyles();
-  const { play: playAlertAudio, stop: stopAlertAudio } = useAudio({ src: alert, loop: true });
+
+  const { play: playAlertAudio, stop: stopAlertAudio } = useAudio({
+    src: alert,
+    loop: true,
+  });
+
+  const { state, testAPI } = useConnectionContext();
 
   const handleAlert = () => {
     playAlertAudio();
@@ -63,7 +75,11 @@ const Connect = () => {
       centered: true,
       children: (
         <Stack justify="center">
-          <Alert title={t("connect.config.alert.modal.title")} icon={<IconAlertCircle size="1rem" />} color="red">
+          <Alert
+            title={t("connect.config.alert.modal.title")}
+            icon={<IconAlertCircle size="1rem" />}
+            color="red"
+          >
             <Text>{t("connect.config.alert.modal.description")}</Text>
           </Alert>
         </Stack>
@@ -81,14 +97,19 @@ const Connect = () => {
     <>
       <Grid>
         <Grid.Col span={7}>
-          <Card withBorder radius="md" p="xl" className={classes.card}>
+          {/* <Card withBorder radius="md" p="xl" className={classes.card}>
             <Text fz="lg" className={classes.title} fw={500}>
               {t("connect.config.title")}
             </Text>
             <Text fz="xs" c="dimmed" mt={3} mb="xl">
               {t("connect.config.desc")}
             </Text>
-            <Group position="apart" className={classes.item} noWrap spacing="xl">
+            <Group
+              position="apart"
+              className={classes.item}
+              noWrap
+              spacing="xl"
+            >
               <div>
                 <Text>{t("connect.config.connect.title")}</Text>
                 <Text size="xs" color="dimmed">
@@ -102,7 +123,12 @@ const Connect = () => {
                 size="lg"
               />
             </Group>
-            <Group position="apart" className={classes.item} noWrap spacing="xl">
+            <Group
+              position="apart"
+              className={classes.item}
+              noWrap
+              spacing="xl"
+            >
               <div>
                 <Text>{t("connect.config.location.location")}</Text>
                 <Text size="xs" color="dimmed">
@@ -117,7 +143,9 @@ const Connect = () => {
                     label: (
                       <Center>
                         <IconSquareLetterU size="1rem" stroke={1.5} />
-                        <Box ml={10}>{t("connect.config.location.uppsala")}</Box>
+                        <Box ml={10}>
+                          {t("connect.config.location.uppsala")}
+                        </Box>
                       </Center>
                     ),
                   },
@@ -133,7 +161,12 @@ const Connect = () => {
                 ]}
               />
             </Group>
-            <Group position="apart" className={classes.item} noWrap spacing="xl">
+            <Group
+              position="apart"
+              className={classes.item}
+              noWrap
+              spacing="xl"
+            >
               <div>
                 <Text>{t("connect.config.alert.title")}</Text>
                 <Text size="xs" color="dimmed">
@@ -144,19 +177,27 @@ const Connect = () => {
                 {t("connect.config.alert.buttonLabel")}
               </Button>
             </Group>
-          </Card>
+          </Card> */}
           <Card mt="md" withBorder radius="md" p="xl" className={classes.card}>
-            <Group className={classes.item} noWrap spacing="xl" position="center">
+            <Group
+              className={classes.item}
+              noWrap
+              spacing="xl"
+              position="center"
+            >
               <Button color="teal" leftIcon={<IconScan size={"1rem"} />}>
                 {t("control.button.scan")}
               </Button>
-              <Button color="yellow" leftIcon={<IconPlayerPause size={"1rem"} />}>
+              <Button
+                color="yellow"
+                leftIcon={<IconPlayerPause size={"1rem"} />}
+              >
                 {t("control.button.pause")}
               </Button>
-              <Button disabled leftIcon={<IconPlayerPlay size={"1rem"} />}>
+              <Button leftIcon={<IconPlayerPlay size={"1rem"} />}>
                 {t("control.button.resume")}
               </Button>
-              <Button disabled color="red.7" leftIcon={<IconPlayerStop size={"1rem"} />}>
+              <Button color="red.7" leftIcon={<IconPlayerStop size={"1rem"} />}>
                 {t("control.button.stop")}
               </Button>
             </Group>
@@ -178,7 +219,8 @@ const Connect = () => {
             />
             <Center>
               <Text fw={600}>Scanning...</Text>
-            </Center>{" "}
+              <Button onClick={() => testAPI()}>TestAPI</Button>
+            </Center>
           </Stack>
         </Grid.Col>
       </Grid>

@@ -1,4 +1,12 @@
-import { Avatar, Box, Group, Text, UnstyledButton, rem, useMantineTheme } from "@mantine/core";
+import {
+  Avatar,
+  Box,
+  Group,
+  Text,
+  UnstyledButton,
+  rem,
+  useMantineTheme,
+} from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
 const User = () => {
@@ -8,7 +16,11 @@ const User = () => {
     <Box
       sx={{
         paddingTop: theme.spacing.sm,
-        borderTop: `${rem(1)} solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[2]}`,
+        borderTop: `${rem(1)} solid ${
+          theme.colorScheme === "dark"
+            ? theme.colors.dark[4]
+            : theme.colors.gray[2]
+        }`,
       }}
     >
       <UnstyledButton
@@ -17,10 +29,14 @@ const User = () => {
           width: "100%",
           padding: theme.spacing.xs,
           borderRadius: theme.radius.sm,
-          color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+          color:
+            theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
 
           "&:hover": {
-            backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[0],
+            backgroundColor:
+              theme.colorScheme === "dark"
+                ? theme.colors.dark[6]
+                : theme.colors.gray[0],
           },
         }}
       >

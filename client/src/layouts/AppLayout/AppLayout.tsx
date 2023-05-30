@@ -1,5 +1,14 @@
-import { Anchor, AppShell, Button, Group, Header, Image, LoadingOverlay, Navbar, Text } from "@mantine/core";
-import { IconLogout } from "@tabler/icons-react";
+import LanguagePicker from "@/components/common/LanguagePicker";
+import {
+  Anchor,
+  AppShell,
+  Group,
+  Header,
+  Image,
+  LoadingOverlay,
+  Navbar,
+  Text,
+} from "@mantine/core";
 import { Suspense, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet } from "react-router-dom";
@@ -7,7 +16,6 @@ import logo from "../../assets/img/logo.png";
 import ROUTER from "../../config/router";
 import MainLinks from "./MainLinks";
 import User from "./User";
-import LanguagePicker from "@/components/common/LanguagePicker";
 
 export default function AppLayout() {
   const { t } = useTranslation();
@@ -25,16 +33,21 @@ export default function AppLayout() {
         navbarOffsetBreakpoint="sm"
         asideOffsetBreakpoint="sm"
         navbar={
-          <Navbar p="md" hiddenBreakpoint="sm" hidden={true} width={{ sm: 200, lg: 280 }}>
+          <Navbar
+            p="md"
+            hiddenBreakpoint="sm"
+            hidden={true}
+            width={{ sm: 200, lg: 280 }}
+          >
             <Navbar.Section grow mt="0">
               <MainLinks />
             </Navbar.Section>
             <Navbar.Section>
               <LanguagePicker sx={{ paddingBottom: 12 }} />
             </Navbar.Section>
-            <Navbar.Section>
+            {/* <Navbar.Section>
               <User />
-            </Navbar.Section>
+            </Navbar.Section> */}
           </Navbar>
         }
         header={
@@ -49,9 +62,9 @@ export default function AppLayout() {
                 </Text>
               </Group>
               <Group>
-                <Button variant="subtle" color="red" leftIcon={<IconLogout size={20} />}>
+                {/* <Button variant="subtle" color="red" leftIcon={<IconLogout size={20} />}>
                   {t("auth.logout")}
-                </Button>
+                </Button> */}
               </Group>
             </Group>
           </Header>
