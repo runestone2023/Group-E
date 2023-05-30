@@ -1,0 +1,86 @@
+{
+  "lang": {
+    "en": "Tiếng Anh",
+    "en-des": "English",
+    "vi": "Tiếng Việt",
+    "vi-des": "Tiếng Việt",
+    "se": "Tiếng Thuỵ Điển",
+    "se-des": "Svenska",
+    "choose": "Ngôn ngữ"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng Xuất",
+    "welcomeText": "Chào mừng quay trở lại. Đăng nhập để tiếp tục.",
+    "username": "Tên tài khoản",
+    "password": "Mật khẩu",
+    "enterUsername": "Nhập tên tài khoản",
+    "enterPassword": "Nhập mật khẩu"
+  },
+  "group": "Nhóm",
+  "team": {
+    "pm": "Project Manager",
+    "des": "Thiết Kế UI/UX",
+    "fe": "Lập Trình Frontend",
+    "be": "Lập Trình Backend",
+    "supervisor": "Giảng viên hướng dẫn"
+  },
+  "nav": {
+    "connect": "Kết nối",
+    "scan": "Tìm kiếm"
+  },
+  "404": {
+    "title": "Không tìm thấy trang",
+    "desc": "Trang đã bị xoá hoặc địa chỉ URL không đúng",
+    "return": "Trở về",
+    "home": "Trang Chủ"
+  },
+  "scan": {
+    "scan": "Quét",
+    "start": "Bắt đầu quét"
+  },
+  "connect": {
+    "connected": "Đã kết nối",
+    "disconnected": "Đã ngắt kết nối",
+    "config": {
+      "title": "Cài đặt kết nối",
+      "desc": "Tạo các cài đặt cho việc kết nối robot đến máy điều khiển và giao diện",
+      "connect": {
+        "title": "Trạng thái kết nối",
+        "desc": "Trạng thái kết nối hiện tại, chưa hay kết nối rồi?",
+        "button": {
+          "on": "MỞ",
+          "off": "ĐÓNG"
+        }
+      },
+      "location": {
+        "uppsala": "Uppsala",
+        "hanoi": "Hà Nội",
+        "location": "Địa điểm",
+        "desc": "Chọn robot để điều khiển"
+      },
+      "alert": {
+        "title": "Kiểm tra âm thanh",
+        "description": "Kiểm tra âm thanh cho bộ phận báo hiệu vật cản",
+        "buttonLabel": "Mở Báo Hiệu",
+        "modal": {
+          "title": "Cảnh báo",
+          "description": "Phát hiện vật cản, hãy chắc chắn rằng mọi thứ vấn ổn"
+        }
+      }
+    }
+  },
+  "control": {
+    "button": {
+      "stop": "Dừng",
+      "pause": "Tạm dừng",
+      "resume": "Tiếp tục"
+    }
+  },
+  "system": {
+    "button": {
+      "confirm": "Đồng ý",
+      "cancel": "Huỷ bỏ"
+    }
+  }
+}
