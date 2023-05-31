@@ -67,7 +67,7 @@ const Connect = () => {
     loop: true,
   });
 
-  const { state, testAPI } = useConnectionContext();
+  const { state, testAPI, controlByCommand } = useConnectionContext();
 
   const handleAlert = () => {
     playAlertAudio();
@@ -185,19 +185,31 @@ const Connect = () => {
               spacing="xl"
               position="center"
             >
-              <Button color="teal" leftIcon={<IconScan size={"1rem"} />}>
+              <Button
+                onClick={() => controlByCommand("Start")}
+                color="teal"
+                leftIcon={<IconScan size={"1rem"} />}
+              >
                 {t("control.button.scan")}
               </Button>
               <Button
+                onClick={() => controlByCommand("Pause")}
                 color="yellow"
                 leftIcon={<IconPlayerPause size={"1rem"} />}
               >
                 {t("control.button.pause")}
               </Button>
-              <Button leftIcon={<IconPlayerPlay size={"1rem"} />}>
+              <Button
+                onClick={() => controlByCommand("Resume")}
+                leftIcon={<IconPlayerPlay size={"1rem"} />}
+              >
                 {t("control.button.resume")}
               </Button>
-              <Button color="red.7" leftIcon={<IconPlayerStop size={"1rem"} />}>
+              <Button
+                onClick={() => controlByCommand("Stop")}
+                color="red.7"
+                leftIcon={<IconPlayerStop size={"1rem"} />}
+              >
                 {t("control.button.stop")}
               </Button>
             </Group>

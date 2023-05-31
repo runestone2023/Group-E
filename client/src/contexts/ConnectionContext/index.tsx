@@ -62,7 +62,23 @@ function useConnectionReducer(_state = initialState) {
     }
   };
 
-  return { state, testAPI };
+  const controlByCommand = async (command: string, cb?: Callback) => {
+    dispatch({ type: ConnectionAction.CONNECT_PENDING });
+    const { error, response } = await useCallApi({
+      ...API_URLS.Test.commmand(),
+      payload: { data: command },
+    });
+    console.log(error, response);
+    if (!error && response?.status === 200) {
+      dispatch({ type: ConnectionAction.CONNECT_SUCCESS });
+      cb?.onSuccess?.();
+    } else {
+      dispatch({ type: ConnectionAction.CONNECT_FAILURE });
+      cb?.onError?.();
+    }
+  };
+
+  return { state, testAPI, controlByCommand };
 }
 
 export const ConnectionContext = createContext<
@@ -70,6 +86,7 @@ export const ConnectionContext = createContext<
 >({
   state: initialState,
   testAPI: async () => {},
+  controlByCommand: async () => {},
 });
 
 interface Props {
