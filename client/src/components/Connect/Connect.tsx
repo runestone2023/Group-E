@@ -215,7 +215,7 @@ const Connect = () => {
             </Group>
           </Card>
         </Grid.Col>
-        <Grid.Col span={5}>
+        {/* <Grid.Col span={5}>
           <Stack align="center" justify="center" h="100%">
             <PacmanLoader
               color="#1864AB"
@@ -234,7 +234,7 @@ const Connect = () => {
               <Button onClick={() => testAPI()}>TestAPI</Button>
             </Center>
           </Stack>
-        </Grid.Col>
+        </Grid.Col> */}
       </Grid>
     </>
   );
