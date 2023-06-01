@@ -73,6 +73,8 @@
   "control": {
     "button": {
       "scan": "Scan",
+      "start": "Start",
+      "drive": "Drive",
       "stop": "Stop",
       "pause": "Pause",
       "resume": "Resume"

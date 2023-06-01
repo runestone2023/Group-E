@@ -73,8 +73,8 @@
   "control": {
     "button": {
       "stop": "Stoppa",
-      "pause": "Pausa",
-      "resume": "Återuppta"
+      "start": "Starta",
+      "drive": "Köra"
     }
   },
   "system": {

@@ -22,7 +22,9 @@ import {
   IconPlayerPause,
   IconPlayerPlay,
   IconPlayerStop,
+  IconRotate,
   IconScan,
+  IconScooter,
   IconSquareLetterH,
   IconSquareLetterU,
 } from "@tabler/icons-react";
@@ -188,9 +190,17 @@ const Connect = () => {
               <Button
                 onClick={() => controlByCommand("Start")}
                 color="teal"
-                leftIcon={<IconScan size={"1rem"} />}
+                leftIcon={<IconRotate size={"1rem"} />}
+                variant="outline"
               >
-                {t("control.button.scan")}
+                {t("control.button.start")}
+              </Button>
+              <Button
+                onClick={() => controlByCommand("Drive")}
+                color="teal"
+                leftIcon={<IconScooter size={"1rem"} />}
+              >
+                {t("control.button.drive")}
               </Button>
               <Button
                 onClick={() => controlByCommand("Pause")}
